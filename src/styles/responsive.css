@@ -1,0 +1,86 @@
+/*
+=================================================
+PROJET E1 : RESPONSIVE
+=================================================
+*/
+
+/* RÈGLES MOBILE (Par défaut) */
+.main-nav-desktop {
+    display: none; 
+}
+.hamburger-menu {
+    display: block; 
+}
+
+
+/* 1. Tablette et au-delà (Min-width: 768px) */
+@media (min-width: 768px) { 
+    
+    /* Header/Nav */
+    body {
+        padding-top: var(--header-height-desktop); 
+    }
+    #main-header {
+        height: var(--header-height-desktop);
+    }
+    .header-content {
+        padding: 0 30px; 
+    }
+    
+    /* Navigation Desktop */
+    .main-nav-desktop {
+        display: block; 
+    }
+    .main-nav-desktop .nav-menu {
+        display: flex; 
+        gap: 20px;
+    }
+    
+    /* Menu Mobile Masqué */
+    .hamburger-menu, .nav-menu-mobile {
+        display: none !important; 
+    }
+    
+    /* Index - Grille des collaborateurs : 2 colonnes */
+    .user-list {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 30px;
+    }
+    
+    /* USER PAGE: Les deux premières cartes (Formulaire et Info) se mettent côte à côte */
+    .user-content-wrapper {
+        grid-template-columns: repeat(2, 1fr); 
+        align-items: start; 
+    }
+
+    /* User - Formulaire (Alignement) */
+    #new-todo-form {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    /* Kanban - 2 colonnes pour les colonnes elles-mêmes (le plateau) */
+    .kanban-board {
+        grid-template-columns: repeat(2, 1fr); 
+        grid-column: 1 / -1; 
+    }
+    
+    /* CRUCIAL : Les tâches à l'intérieur des colonnes restent en UNE SEULE colonne */
+    .kanban-column {
+        grid-template-columns: 1fr; 
+    }
+}
+
+/* 2. Desktop et au-delà (Min-width: 1024px) */
+@media (min-width: 1024px) { 
+    
+    .header-content {
+        padding: 0 50px; 
+    }
+
+    /* Index - Grille des collaborateurs : 3 colonnes */
+    .user-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

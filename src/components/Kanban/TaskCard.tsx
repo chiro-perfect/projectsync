@@ -1,6 +1,6 @@
 // src/components/Kanban/TaskCard.tsx
-import React, { DragEvent } from 'react';
-import { Todo } from '../../types';
+import React, { type DragEvent } from 'react';
+import type { Todo } from '../../types';
 
 interface TaskCardProps {
     todo: Todo;
